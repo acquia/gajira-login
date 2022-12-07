@@ -1,7 +1,7 @@
 # Jira Login
+
 Used to store credentials for later use by other Jira Actions
 
-For examples on how to use this, check out the [gajira-demo](https://github.com/atlassian/gajira-demo) repository
 > ##### Only supports Jira Cloud. Does not support Jira Server (hosted)
 
 This is required by other actions like:
@@ -26,14 +26,14 @@ jobs:
     name: Jira Example
     steps:
     - name: Login
-      uses: atlassian/gajira-login@master
+      uses: atlassian/gajira-login@v3
       env:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
 
     - name: Jira TODO
-      uses: atlassian/gajira-todo@master
+      uses: atlassian/gajira-todo@v3
       with:
         project: GA
         issuetype: Task
@@ -42,7 +42,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-More examples at [gajira-demo](https://github.com/atlassian/gajira-demo) repository
+More examples at [gajira](https://github.com/atlassian/gajira) repository
 
 ----
 ## Action Spec:
